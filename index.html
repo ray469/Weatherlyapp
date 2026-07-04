@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEATHERLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="weather-card" aria-labelledby="app-title">
+      <div class="hero">
+        <p class="eyebrow">Weather lookup</p>
+        <h1 id="app-title">WEATHERLY</h1>
+        <p class="hero-copy">Current conditions for any city and country, delivered in a clean glanceable view.</p>
+      </div>
+
+      <form id="weather-form" class="weather-form" novalidate>
+        <div class="field-group api-group">
+          <label for="apiKey">API Key</label>
+          <input id="apiKey" name="apiKey" type="password" placeholder="OpenWeatherMap API key" autocomplete="off">
+          <p class="field-hint">Enter your OpenWeatherMap key in the page. It stays in this browser only.</p>
+        </div>
+
+        <div class="form-grid">
+          <div class="field-group">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" placeholder="Melbourne" autocomplete="address-level2">
+          </div>
+
+          <div class="field-group">
+            <label for="country">Country</label>
+            <input id="country" name="country" type="text" placeholder="Australia" autocomplete="country-name">
+          </div>
+        </div>
+
+        <button class="submit-button" type="submit">Get Weather</button>
+        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <section id="weather-result" class="weather-result is-empty" aria-live="polite">
+        <div class="empty-state">
+          <div class="empty-icon" aria-hidden="true">+</div>
+          <p>Enter a location to view the latest conditions.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
